@@ -17,12 +17,12 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/avt/**")
-                .addResourceLocations("file:src\\main\\resources\\static\\avt\\")
+                .addResourceLocations("file:src/main/resources/static/avt/")
                 .setCachePeriod(3600)
                 .resourceChain(true)
                 .addResolver(new EncodedResourceResolver());
         registry.addResourceHandler("/products/**")
-                .addResourceLocations("file:src\\main\\resources\\static\\products\\");
+                .addResourceLocations("file:src/main/resources/static/products/");
 
     }
 

@@ -165,7 +165,7 @@ public class Admin {
 
             }
 
-            String fileDir = "src\\main\\resources\\static\\products";
+            String fileDir = "src/main/resources/static/products";
             Resource resource = resourceLoader.getResource(product.getImage());
 
             if (resource.exists()) {
