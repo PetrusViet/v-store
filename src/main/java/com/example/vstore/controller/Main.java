@@ -146,7 +146,7 @@ public class Main {
                 return "uploadAVT";
             }
 
-            String uploadDir = "src/main/resources/static/avt";
+            String uploadDir = "src\\main\\resources\\static\\avt";
             FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
             user.setAvt(fileName);
             userServer.save(user);
@@ -167,7 +167,7 @@ public class Main {
         }
         try {
             String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-            String uploadDir = "src/main/resources/static/avt";
+            String uploadDir = "src\\main\\resources\\static\\avt";
             FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
             user.setAvt(fileName);
             userServer.save(user);
@@ -181,7 +181,7 @@ public class Main {
 
     @GetMapping(value = "/getImage")
     public void serveFile(@RequestParam("name") String filename, HttpServletResponse response, HttpServletRequest request) throws IOException  {
-        String fileDir = "src/main/resources/static/avt";
+        String fileDir = "C:\\Users\\MININT-IAEC8I7-local\\IdeaProjects\\v-store - new\\src\\main\\resources\\static\\avt";
         Path file = Paths.get(fileDir, filename);
         if (Files.exists(file)) {
             String mimeType = URLConnection.guessContentTypeFromName(filename);
@@ -265,7 +265,7 @@ public class Main {
             return "uploadAVT";
         }
 
-        String fileDir = "src/main/resources/static/avt";
+        String fileDir = "src\\main\\resources\\static\\avt";
         Resource resource = resourceLoader.getResource(url);
 
         if (resource.exists()) {
