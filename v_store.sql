@@ -67,8 +67,8 @@ insert into `products` (`name_product`,`price`,`number`, `id_product`) values
 ('Thien dan', 1000,1, 9);
 
 insert into `bill` values 
-(5, 5, '2020-11-1',1, 1),
-(6, 2, '2019-10-10',1, 2);
+(4, 5, '2020-11-1',1, 1),
+(3, 2, '2019-10-10',1, 2);
 
 -- drop database v_store;
 
